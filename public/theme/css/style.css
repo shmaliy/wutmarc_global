@@ -1,4 +1,6 @@
 /* CSS Document */
+@import "/theme/css/quotes.css" screen;
+
 html, body, img, div, a, span, p { margin:0; padding:0; }
 html, body { height:100%; width:100%; font-family: Arial; color:#000; font-size:12px;}
 html { 
@@ -341,6 +343,20 @@ img {border:none;}
 	width:330px;
 	margin:0 29px 0 0;
 }
+
+.indexCenterColumn {
+	float: left;
+	width:300px;
+	margin:0 15px 0 0;
+}
+
+.indexRightColumnNew {
+	float: right;
+	width:300px;
+	margin:0 15px 0 0;
+}
+
+
 
 .indexLeftColumn .indexNews {
 	width:298px;
