@@ -17,11 +17,7 @@
 </div>
 
 <div class="indexRightColumnNew">
-	<div class="quotes">
-		<div class="lme">
-			<script type="text/javascript">var _mcq=["6",""];</script><span id='_mc_mg6'></span><script language="JavaScript" src="http://stat1.moneycontrol.com/mcjs/common/mc_widget.js"></script><noscript><a href="http://www.moneycontrol.com">Sensex/Nifty</a></noscript>
-		</div>
-	</div>
+	<?php echo $this->action('jobs', 'index', 'default', array('alias' => 'jobs')); ?>
 </div>
 
 <div class="clear"></div>

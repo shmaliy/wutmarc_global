@@ -16,6 +16,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
             $front->setRouter($router);            
             //$front->registerPlugin(new Ext_Controller_Plugin_ModuleBootstrap, 1);
             Zend_Registry::set('interface', $this->_options['interface']);
+            Zend_Registry::set('cache', false);
             
         } catch (Exception $e) {
         	echo $e->getMessage();

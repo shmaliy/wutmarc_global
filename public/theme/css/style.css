@@ -356,7 +356,38 @@ img {border:none;}
 	margin:0 15px 0 0;
 }
 
+.indexRightColumnNew .index-jobs {
+	width:298px;
+	border:1px solid #0e6eb8;
+	margin:0 0 25px 0;
+	padding: 15px;	
+}
 
+.indexRightColumnNew .index-jobs .title {
+	color:#0C6DB7;
+	font-size:16px;
+	font-weight:bold;
+}
+
+.indexRightColumnNew .index-jobs .employee {
+	width:100%;
+	height:230px;
+	background: url(/theme/img/employee.png) top center no-repeat;
+}
+
+.indexRightColumnNew .index-jobs .container {
+	width:100%;
+}
+
+.indexRightColumnNew .index-jobs .container .item {
+	padding:0 0 15px 0;
+	border-bottom:1px dashed #b7b7b7;
+	margin:0 0 20px 0;
+}
+
+.indexRightColumnNew .index-jobs .container .item .title {
+	font-size:12px;
+}
 
 .indexLeftColumn .indexNews {
 	width:298px;

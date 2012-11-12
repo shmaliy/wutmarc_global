@@ -9,10 +9,12 @@ class IndexController extends Zend_Controller_Action
     private $help;
 	private $nowdate;
 	private $receiver;
+	private $_newModel;
 	
 	public function init()
     {
         $this->model = new Application_Model_Default();
+        $this->_newModel = new Application_Model_NewModel();
 		$this->contentModel = new Content_Model_Frontend;
         $this->abstractModel = new Application_Model_Abstract();
         $this->nowdate = $this->model->abstractModel->nowdate;
@@ -105,6 +107,19 @@ class IndexController extends Zend_Controller_Action
     	}
     	
     	$this->view->items = $items;
+    }
+    
+    public function jobsAction()
+    {
+    	$request = $this->getRequest();
+    	$params = $request->getParams();
+    	$this->view->category = $this->_newModel->getRootCategoryEntryByAlias($params['alias']);
+    	//$this->help->arrayTrans($this->view->category);
+    	
+    	$this->view->items = $this->_newModel->getJobs($this->view->category['id']);
+    	//$this->help->arrayTrans($this->view->items);
+    	
+    	
     }
     
     public function newsitemAction()
