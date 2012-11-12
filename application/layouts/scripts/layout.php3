@@ -2,6 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <?php $this->headTitle('Wutmarc')->setSeparator(' | '); ?>
+<?php $this->headScript()->appendFile('/js/jquery-1.8.1.min.js'); ?>
+<?php $this->headScript()->appendFile('/js/jquery/jquery-ui-1.9.0.custom/js/jquery-ui-1.9.0.custom.min.js'); ?>
 <?php $this->headScript()->appendFile("/js/prototype/prototype.js"); ?>
 <?php $this->headScript()->appendFile("/js/scriptaculous/scriptaculous.js"); ?>
 <?php $this->headScript()->appendFile("/cms/js/tiny_mce/tiny_mce.js"); ?>
@@ -15,6 +17,7 @@
 <?php $this->headLink()->appendStylesheet('/js/lightbox2/css/lightbox.css'); ?>
 <?php $this->headLink()->appendStylesheet('/theme/css/style.css')
 					   ->appendStylesheet('/theme/css/swf.css')
+					   ->appendStylesheet('/js/jquery/jquery-ui-1.9.0.custom/css/ui-lightness/jquery-ui-1.9.0.custom.css')
 					   ->headLink(array('rel' => 'favicon', 'href' => '/favicon.png'), 'PREPEND'); ?>
 <?
 	$this->headMeta()->appendName('keywords', '')
@@ -28,7 +31,13 @@
 <?php echo $this->headTitle(); ?>
 <?php echo $this->headScript(); ?>
 <?php echo $this->headLink(); ?>
-
+<script>
+$(function() {
+    $( "#accordion" ).accordion({
+        heightStyle: "content"
+    });
+});
+</script>
 </head>
 <body>
 <div class="header">

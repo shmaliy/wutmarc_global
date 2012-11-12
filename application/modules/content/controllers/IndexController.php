@@ -6,10 +6,12 @@ class Content_IndexController extends Zend_Controller_Action
     private $help;
 	private $img;
 	private $nowdate;
+	private $_model;
     
 	public function init()
     {
         $this->model = new Content_Model_Frontend();
+        $this->_model = new Application_Model_NewModel();
         $this->img = new img();
         $this->nowdate = $this->model->abstractModel->nowdate;
         $this->help = $this->model->abstractModel->help;
@@ -152,5 +154,19 @@ class Content_IndexController extends Zend_Controller_Action
 		$this->view->columns = $columns;
 		$this->view->items = $items;
 		$this->view->groups = $groups;
+	}
+	
+	public function contactsAction()
+	{
+		$request = $this->getRequest();
+		$params = $request->getParams();
+		//$this->help->arrayTrans($params);
+		
+		
+		$this->view->category = $this->_model->getRootCategoryEntryByAlias($params['cat_alias'], $params['lang']);
+		//$this->help->arrayTrans($this->view->category);
+		
+		$this->view->items = $this->_model->getContentsList(array($this->view->category['id']));
+		//$this->help->arrayTrans($this->view->items);
 	}
 }

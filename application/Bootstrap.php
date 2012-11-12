@@ -115,6 +115,20 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         );
         $router->addRoute('static', $route);
         
+        /*  Контакты */
+        $route = new Zend_Controller_Router_Route(
+        	':lang/contacts',
+        	array(
+        		'module' => 'content',
+        	    'controller' => 'index',
+        	    'action'     => 'contacts',
+        		'cat_alias'     => 'contacts',
+        	    'lang' => $lang
+        	)
+        );
+        $router->addRoute('contacts', $route);
+        
+        
         /*  Аяксовое получение новостей */
         
         $route = new Zend_Controller_Router_Route(
