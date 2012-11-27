@@ -1,6 +1,10 @@
 <?php
 
-include('../public/cms/db.php');
+if ($_SERVER['HTTP_HOST'] == 'public.wutmarc_global') {
+	include('../public/cms/db.php'); 
+} else {
+	include(PUBLIC_PATH . '/cms/db.php');
+}
 
 /**
  * Конфигурационный файл
